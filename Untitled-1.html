@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushira Sankalpa | Business Analysis & Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+        
+        .skill-bar {
+            width: 0;
+            transition: width 2s ease-in-out;
+        }
+        
+        .skill-item:hover .skill-bar {
+            width: 100%;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #333;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-bold text-black">USHIRA SANKALPA</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-black focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="nav-link px-3 py-2">Home</a>
+                <a href="#about" class="nav-link px-3 py-2">About</a>
+                <a href="#skills" class="nav-link px-3 py-2">Skills</a>
+                <a href="#portfolio" class="nav-link px-3 py-2">Portfolio</a>
+                <a href="#contact" class="nav-link px-3 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-16 overflow-hidden">
+        <div class="text-center px-4 md:px-0 animate-fadeInUp">
+            <div class="max-w-4xl mx-auto">
+                <img src="https://i.postimg.cc/637pr1MN/Whats-App-Image-2025-08-14-at-13-27-51-d0b82c18.jpg" alt="Ushira Sankalpa" class="w-40 h-40 md:w-56 md:h-56 rounded-full mx-auto object-cover border-4 border-white mb-8 shadow-lg hover:scale-110 transition-transform duration-500">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Ushira Sankalpa</h1>
+                <h2 class="text-xl md:text-2xl mb-8">Business Analysis & Management Enthusiast | Data-Driven Decision Maker</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Passionate about transforming data into actionable insights. Combining academic knowledge with practical experience to bridge the gap between theory and real-world business solutions.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#portfolio" class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition duration-300 hover:-translate-y-1">View Portfolio</a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-black transition duration-300 hover:-translate-y-1">Contact Me</a>
+                    <a href="https://files.fm/u/awyafhp7nu" download="Ushira_Sankalpa_CV.pdf" class="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-100 transition duration-300 hover:-translate-y-1 flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="md:flex gap-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 animate-fadeInUp delay-100">
+                    <h3 class="text-2xl font-bold mb-4">Personal Profile</h3>
+                    <p class="mb-6 text-gray-700 leading-relaxed">I'm a dedicated Business Management student with a passion for data-driven decision making. My journey combines academic rigor with practical experience in auditing and financial analysis, giving me a unique perspective on how theoretical knowledge applies to real business challenges.</p>
+                    <p class="text-gray-700 leading-relaxed">What drives me most is the opportunity to uncover insights from data and transform them into strategic actions that create tangible business value. I believe in the power of continuous learning and enjoy exploring how new technologies can enhance traditional business processes.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Education & Experience</h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg">Wayamba University of Sri Lanka</h4>
+                        <p class="text-gray-600 mb-1">B.Sc. (Special) in Business Management (In Progress)</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg">Association of Accounting Technicians of Sri Lanka (AAT)</h4>
+                        <p class="text-gray-600 mb-1">Passed Finalist</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg">Institute of Chartered Accountants of Sri Lanka</h4>
+                        <p class="text-gray-600 mb-1">Reading</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg">Diploma in Business Analytics (DBA)</h4>
+                        <p class="text-gray-600 mb-1">Reading</p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-lg">AGS Associates (Chartered Accountants)</h4>
+                        <p class="text-gray-600 mb-2">Audit Trainee (2020–2021)</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>Assisted in statutory audits for diverse clients</li>
+                            <li>Prepared comprehensive audit working papers</li>
+                            <li>Verified financial statement accuracy and compliance</li>
+                            <li>Gained hands-on experience in internal controls and tax compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-chart-line text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Management</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="90"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Creativity</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="85"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-hashtag text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Digital Marketing</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="80"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-handshake text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Negotiation</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="88"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 5 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-brain text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Critical Thinking</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="92"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill 6 -->
+                <div class="skill-item bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-xl text-black"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Leadership</h3>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="skill-bar h-full bg-black" style="width: 0" data-percent="87"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Portfolio & Achievements</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-6">
+                            <i class="fas fa-trophy text-2xl text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-1">First Place – Emerging Entrepreneur Business Idea Selection Competition, 2018</h3>
+                            <p class="text-gray-600">Recognized for innovative business concept and planning</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">This prestigious competition evaluated participants on creativity, feasibility, and business potential. My winning concept demonstrated a unique solution to a market gap, with thorough research backing the proposed business model.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Entrepreneurship</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Business Planning</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Innovation</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Market Research</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Idea" class="rounded-md h-40 w-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Entrepreneur Event" class="rounded-md h-40 w-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97374f27f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Team Collaboration" class="rounded-md h-40 w-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Placeholder for more portfolio items -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale animate-fadeInUp delay-200">
+                    <h3 class="text-xl font-bold mb-2">Business Analysis Projects</h3>
+                    <p class="text-gray-600 mb-4">Collection of academic projects demonstrating analytical capabilities</p>
+                    <button class="text-black border-b border-black hover:text-gray-700 hover:border-gray-700">View Projects →</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Audit Case Studies</h3>
+                    <p class="text-gray-600 mb-4">Professional samples showcasing audit methodology and insights</p>
+                    <button class="text-black border-b border-black hover:text-gray-700 hover:border-gray-700">Explore Case Studies →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-100 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Areas of Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Business Analysis</h3>
+                    <p class="text-gray-600">Transforming data into strategic insights that drive informed business decisions and improve operational efficiency.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chess text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Strategic Planning</h3>
+                    <p class="text-gray-600">Developing comprehensive strategies that align with business objectives and market opportunities.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-black text-white p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Management Insights</h3>
+                    <p class="text-gray-600">Providing actionable recommendations to optimize processes, enhance performance, and drive organizational growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="md:flex gap-12">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <a href="mailto:ushirasankalpa2001@gmail.com" class="text-gray-600 hover:text-black">ushirasankalpa2001@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <a href="tel:+94771217145" class="text-gray-600 hover:text-black">+94 77 121 7145</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 p-3 rounded-full mr-4">
+                                <i class="fab fa-linkedin-in text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/ushira-sankalpa-967919375" target="_blank" class="text-gray-600 hover:text-black">linkedin.com/in/ushira-sankalpa-967919375</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 p-3 rounded-full mr-4">
+                                <i class="fab fa-instagram text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Instagram</h4>
+                                <a href="https://instagram.com/ushira_sankalpa" target="_blank" class="text-gray-600 hover:text-black">@ushira_sankalpa</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 p-3 rounded-full mr-4">
+                                <i class="fab fa-twitter text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Twitter/X</h4>
+                                <a href="https://twitter.com/ushirasankalpa" target="_blank" class="text-gray-600 hover:text-black">@ushirasankalpa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-black text-white px-6 py-3 rounded-md w-full hover:bg-gray-800 transition duration-300">Send Message</button>
+                    </form>
+                    
+                    <!-- Success message (hidden by default) -->
+                    <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 border border-green-200 rounded-md text-green-700">
+                        <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully. I'll get back to you soon!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">USHIRA SANKALPA</h3>
+                    <p class="text-gray-400">Business Analysis & Management Enthusiast</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="mailto:ushirasankalpa2001@gmail.com" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/ushira-sankalpa-967919375" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/ushira_sankalpa" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/ushirasankalpa" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="year"></span> Ushira Sankalpa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Animate skill bars when scrolled to
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const percent = bar.getAttribute('data-percent');
+                bar.style.width = percent + '%';
+            });
+        }
+        
+        // Check if skill section is in view
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+        
+        // Skill bar animation handler
+        let skillBarsAnimated = false;
+        
+        window.addEventListener('scroll', function() {
+            const skillsSection = document.getElementById('skills');
+            if (isInViewport(skillsSection) && !skillBarsAnimated) {
+                animateSkillBars();
+                skillBarsAnimated = true;
+            }
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                document.getElementById('formSuccess').classList.remove('hidden');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('formSuccess').classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
